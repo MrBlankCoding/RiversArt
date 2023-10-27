@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>im terrible at naming stuff</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
   <!-- Header Section -->
   <header>
@@ -14,50 +16,50 @@
   </header>
 
   <!-- Search Bar -->
-<div class="search-bar">
-  <input type="text" id="search-input" placeholder="Search bar of DOOM...">
-  <button id="search-button">Search</button>
-  <p id="not-found-message"></p>
-</div>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search bar of DOOM...">
+    <button id="search-button">Search</button>
+    <p id="not-found-message"></p>
+  </div>
 
-<script>
-// Function to perform the search
-function searchArtwork() {
-  var searchTerm = document.getElementById("search-input").value.toLowerCase();
-  var artworks = document.querySelectorAll(".artwork");
+  <script>
+    // Function to perform the search
+    function searchArtwork() {
+      var searchTerm = document.getElementById("search-input").value.toLowerCase();
+      var artworks = document.querySelectorAll(".artwork");
 
-  var found = false; // Flag to check if a matching artwork is found
+      var found = false; // Flag to check if a matching artwork is found
 
-  artworks.forEach(function(artwork) {
-    var artworkTitle = artwork.getAttribute('data-title').toLowerCase(); // Use the data-title attribute
-    var img = artwork.querySelector("img");
+      artworks.forEach(function (artwork) {
+        var artworkTitle = artwork.getAttribute('data-title').toLowerCase(); // Use the data-title attribute
+        var img = artwork.querySelector("img");
 
-    if (artworkTitle.includes(searchTerm)) {
-      artwork.style.display = "block";
-      img.style.display = "block"; // Show the associated image
-      found = true; // Set the flag to true if a matching artwork is found
-    } else {
-      artwork.style.display = "none";
-      img.style.display = "none"; // Hide the associated image
+        if (artworkTitle.includes(searchTerm)) {
+          artwork.style.display = "block";
+          img.style.display = "block"; // Show the associated image
+          found = true; // Set the flag to true if a matching artwork is found
+        } else {
+          artwork.style.display = "none";
+          img.style.display = "none"; // Hide the associated image
+        }
+      });
+
+      // Scroll to the first matching artwork if found
+      if (found) {
+        var firstMatchingArtwork = document.querySelector(".artwork[data-title*='" + searchTerm + "']");
+        if (firstMatchingArtwork) {
+          smoothScrollToTarget(firstMatchingArtwork);
+        }
+      } else {
+        // Display "Artwork not found" message in red
+        var notFoundMessage = document.getElementById("not-found-message");
+        notFoundMessage.style.color = "red";
+        notFoundMessage.textContent = "Artwork not found";
+      }
     }
-  });
-
-  // Scroll to the first matching artwork if found
-  if (found) {
-    var firstMatchingArtwork = document.querySelector(".artwork[data-title*='" + searchTerm + "']");
-    if (firstMatchingArtwork) {
-      smoothScrollToTarget(firstMatchingArtwork);
-    }
-  } else {
-    // Display "Artwork not found" message in red
-    var notFoundMessage = document.getElementById("not-found-message");
-    notFoundMessage.style.color = "red";
-    notFoundMessage.textContent = "Artwork not found";
-  }
-}
 
 
-</script>
+  </script>
 
   <!-- Navigation Section -->
   <nav>
@@ -65,7 +67,9 @@ function searchArtwork() {
       <li><a href="#home">Home</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="https://docs.google.com/document/d/e/2PACX-1vQ_XRHURpaoEPsvu1ZqBfSSPGN1LGf5yu_leJYlqHxk0MjOCgteTwEG0oQGE-0eQAWxFLiGweq44whT/pub" target="_blank">Short Story</a></li>
+      <li><a
+          href="https://docs.google.com/document/d/e/2PACX-1vQ_XRHURpaoEPsvu1ZqBfSSPGN1LGf5yu_leJYlqHxk0MjOCgteTwEG0oQGE-0eQAWxFLiGweq44whT/pub"
+          target="_blank">Short Story</a></li>
     </ul>
   </nav>
 
@@ -91,148 +95,148 @@ function searchArtwork() {
             <p>Medium: Digital</p>
             <p>Description: Made on May 30, 2023</p>
           </div>
-        <!-- Artwork 2 -->
-    <article class="artwork" data-title="Desktop wallpaper">
-      <img src="Example2.jpeg" alt="Artwork 2">
-        <div class="artwork-info">
-          <h3>Desktop wallpaper</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on July 3rd 2023</p>
-        </div>
-    </article>
+          <!-- Artwork 2 -->
+          <article class="artwork" data-title="Desktop wallpaper">
+            <img src="Example2.jpeg" alt="Artwork 2">
+            <div class="artwork-info">
+              <h3>Desktop wallpaper</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on July 3rd 2023</p>
+            </div>
+          </article>
 
-    <!-- Artwork 3 -->
-    <article class="artwork" data-title="Moonchild">
-      <img src="Example3.jpeg" alt="Artwork 3">
-        <div class="artwork-info">
-          <h3>Moonchild</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on April 15th 2023</p>
-        </div>
-    </article>
+          <!-- Artwork 3 -->
+          <article class="artwork" data-title="Moonchild">
+            <img src="Example3.jpeg" alt="Artwork 3">
+            <div class="artwork-info">
+              <h3>Moonchild</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on April 15th 2023</p>
+            </div>
+          </article>
 
-    <!-- Artwork 4 -->
-    <article class="artwork" data-title="Mermay">
-      <img src="Example4.jpeg" alt="Artwork 4">
-        <div class="artwork-info">
-          <h3>Mermay</h3>
-          <p>Medium: Digital</p>
-          <p>Description: made on May 29 2023</p>
-        </div>
-    </article>
-    <!-- Artwork 5 -->
-    <article class="artwork" data-title="Lil gay mermaids">
-      <img src="Example5.jpeg" alt="Artwork 5">
-        <div class="artwork-info">
-          <h3>Lil gay mermaids</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on May 30 2023</p>
-        </div>
-    </article>
-    <!-- Artwork 6 -->
-    <article class="artwork" data-title="Komahina">
-      <img src="Example6.jpeg" alt="Artwork 6">
-        <div class="artwork-info">
-          <h3>Komahina</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on Feburary 17 2023 wip</p>
-        </div>
-    </article>
-    <!-- Artwork 7 -->
-    <article class="artwork" data-title="I literally don't know">
-      <img src="Example7.jpeg" alt="Artwork 7">
-        <div class="artwork-info">
-          <h3>I literally don't know</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on July 29 2023 wip</p>
-        </div>
-    </article>
-    <!-- Artwork 8 -->
-    <article class="artwork" data-title="Chill">
-      <img src="Example8.jpeg" alt="Artwork 8">
-        <div class="artwork-info">
-          <h3>Chill</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on July 5th 2023</p>
-        </div>
-    </article>
-    <!-- Artwork 9 -->
-    <article class="artwork" data-title="Sleepovers">
-      <img src="Example9.jpeg" alt="Artwork 9">
-        <div class="artwork-info">
-          <h3>Sleepovers</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on June 11 2023 wip</p>
-        </div>
-    </article>
-    <!-- Artwork 10 -->
-    <article class="artwork" data-title="Pond">
-      <img src="Example10.jpeg" alt="Artwork 10">
-        <div class="artwork-info">
-          <h3>Pond</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on July 22 2023 wip?</p>
-        </div>
-    </article>
-    <!-- Artwork 11 -->
-    <article class="artwork" data-title="Unconrolled Chaos">
-      <img src="Example11.jpeg" alt="Artwork 11">
-        <div class="artwork-info">
-          <h3>Unconrolled Chaos</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on Augest 31 2023</p>
-        </div>
-    </article>
-    <!-- Artwork 12 -->
-    <article class="artwork" data-title="Pusheen">
-      <img src="Example12.jpeg" alt="Artwork 11">
-        <div class="artwork-info">
-          <h3>Coding is hard w Pusheen the cat</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on Sept 28 2023</p>
-        </div>
-    </article>
-    <!-- Artwork 13 -->
-    <article class="artwork" data-title="Spooky Season">
-      <img src="Example13.jpeg" alt="Artwork 13">
-        <div class="artwork-info">
-          <h3>Spooky Season</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on Oct 1 2023</p>
-        </div>
-    </article>
-    <!-- Artwork 14 -->
-    <article class="artwork" data-title="Spooky Season">
-      <img src="Example14.jpeg" alt="Artwork 13">
-        <div class="artwork-info">
-          <h3>City Hallows (Purple)</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on Oct 22 2023</p>
-          </div>
-    </article>
-    <!-- Artwork 14 -->
-    <article class="artwork" data-title="Spooky Season">
-      <img src="Example14.jpeg" alt="Artwork 13">
-        <div class="artwork-info">
-          <h3>City Hallows (Purple)</h3>
-          <p>Medium: Digital</p>
-          <p>Description: Made on Oct 22 2023</p>
-          </div>
-    </article>
-    
+          <!-- Artwork 4 -->
+          <article class="artwork" data-title="Mermay">
+            <img src="Example4.jpeg" alt="Artwork 4">
+            <div class="artwork-info">
+              <h3>Mermay</h3>
+              <p>Medium: Digital</p>
+              <p>Description: made on May 29 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 5 -->
+          <article class="artwork" data-title="Lil gay mermaids">
+            <img src="Example5.jpeg" alt="Artwork 5">
+            <div class="artwork-info">
+              <h3>Lil gay mermaids</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on May 30 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 6 -->
+          <article class="artwork" data-title="Komahina">
+            <img src="Example6.jpeg" alt="Artwork 6">
+            <div class="artwork-info">
+              <h3>Komahina</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on Feburary 17 2023 wip</p>
+            </div>
+          </article>
+          <!-- Artwork 7 -->
+          <article class="artwork" data-title="I literally don't know">
+            <img src="Example7.jpeg" alt="Artwork 7">
+            <div class="artwork-info">
+              <h3>I literally don't know</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on July 29 2023 wip</p>
+            </div>
+          </article>
+          <!-- Artwork 8 -->
+          <article class="artwork" data-title="Chill">
+            <img src="Example8.jpeg" alt="Artwork 8">
+            <div class="artwork-info">
+              <h3>Chill</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on July 5th 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 9 -->
+          <article class="artwork" data-title="Sleepovers">
+            <img src="Example9.jpeg" alt="Artwork 9">
+            <div class="artwork-info">
+              <h3>Sleepovers</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on June 11 2023 wip</p>
+            </div>
+          </article>
+          <!-- Artwork 10 -->
+          <article class="artwork" data-title="Pond">
+            <img src="Example10.jpeg" alt="Artwork 10">
+            <div class="artwork-info">
+              <h3>Pond</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on July 22 2023 wip?</p>
+            </div>
+          </article>
+          <!-- Artwork 11 -->
+          <article class="artwork" data-title="Unconrolled Chaos">
+            <img src="Example11.jpeg" alt="Artwork 11">
+            <div class="artwork-info">
+              <h3>Unconrolled Chaos</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on Augest 31 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 12 -->
+          <article class="artwork" data-title="Pusheen">
+            <img src="Example12.jpeg" alt="Artwork 11">
+            <div class="artwork-info">
+              <h3>Coding is hard w Pusheen the cat</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on Sept 28 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 13 -->
+          <article class="artwork" data-title="Spooky Season">
+            <img src="Example13.jpeg" alt="Artwork 13">
+            <div class="artwork-info">
+              <h3>Spooky Season</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on Oct 1 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 14 -->
+          <article class="artwork" data-title="Spooky Season">
+            <img src="Example14.jpeg" alt="Artwork 13">
+            <div class="artwork-info">
+              <h3>City Hallows (Purple)</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on Oct 22 2023</p>
+            </div>
+          </article>
+          <!-- Artwork 14 -->
+          <article class="artwork" data-title="Spooky Season">
+            <img src="Example14.jpeg" alt="Artwork 13">
+            <div class="artwork-info">
+              <h3>City Hallows (Orange)</h3>
+              <p>Medium: Digital</p>
+              <p>Description: Made on Oct 22 2023</p>
+            </div>
+          </article>
+
 
     </section>
 
-  <!-- Video Section -->
-<section id="video">
-    <h2>Art Showcase Video</h2>
-    <div class="video-container">
+    <!-- Video Section -->
+    <section id="video">
+      <h2>Art Showcase Video</h2>
+      <div class="video-container">
         <video controls>
-            <source src="River.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+          <source src="River.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- About Section -->
     <section class="gradient-bg-section" id="about">
@@ -240,8 +244,10 @@ function searchArtwork() {
       <div class="artist-bio">
         <img src="Profile.jpeg" alt="Artist Name">
         <h3>UncontrolledChaos</h3>
-        <p>Artist Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod erat sit amet nibh bibendum...</p>
-        <p>Artistic Journey: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam...</p>
+        <p>Artist Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod erat sit amet nibh
+          bibendum...</p>
+        <p>Artistic Journey: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam...</p>
       </div>
     </section>
   </main>
@@ -267,4 +273,5 @@ function searchArtwork() {
     <p>Website by <a href="https://mrblankportfolio.mrblankcoding.repl.co/" target="_blank">MrBlankCoding</a></p>
   </footer>
 </body>
+
 </html>
