@@ -1,0 +1,261 @@
+/* Define custom CSS variables */
+:root {
+  --primary-color: #33bbff;           /* Define primary color */
+  --secondary-color: #3f33e6;         /* Define secondary color */
+  --background-color: #1D3557;        /* Define background color */
+  --menu-background: #222;            /* Define menu background color */
+  --accent-color: #FFD166;            /* Define accent color */
+  --text-color: #4e72df;              /* Define text color */
+  --gallery-background: #A8DADC;      /* Define gallery background color */
+  --border-color: #457B9D;            /* Define border color */
+  --footer-bg: #393E46;               /* Define footer background color */
+}
+
+/* Global styles for the entire page */
+body {
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+/* Styles for headings */
+h1 {
+  font-size: 36px;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+/* Style for the search bar */
+.search-bar {
+  margin-top: 20px; /* Adjust the margin as needed */
+  text-align: center;
+}
+
+#search-input {
+  padding: 10px;
+  width: 300px; /* Adjust the width as needed */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Adjust the color as needed */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style for the search bar on hover */
+#search-button:hover {
+  background-color: #0056b3; /* Adjust the hover color as needed */
+}
+
+/* Styles for navigation menu */
+nav ul {
+  list-style: none;
+  padding: 0;
+  background-color: var(--menu-background);
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Styles for sections */
+section {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Styles for the portfolio section */
+#portfolio {
+  background-color: var(--gallery-background);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Styles for the art gallery */
+.art-gallery {
+  display: grid;
+  grid-gap: 20px;
+}
+
+/* Styles for artwork */
+.artwork {
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #9ed4ea;
+  margin-bottom: 30px;
+}
+
+.artwork img {
+  max-width: 100%;
+  height: auto;
+  max-height: 700px;
+}
+
+.larger-artwork {
+  width: auto;
+  margin: 0 auto;
+}
+
+/* Styles for the footer */
+footer p {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--footer-bg);
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Styles for the main content area */
+main {
+  margin-bottom: 60px;
+}
+
+/* Styles for the header */
+header {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 20px;
+  border-bottom: 5px solid var(--secondary-color);
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  nav ul {
+    text-align: center;
+  }
+
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* Styles for canvas backgrounds */
+.canvas-bg-container {
+  position: relative;
+}
+
+.canvas-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Styles for the video section */
+#video {
+  background-color: var(--gallery-background);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for the video container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+/* Styles for the video player */
+video {
+  max-width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Styles for the "back to top" button */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #5c5c5c;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#back-to-top:hover {
+  background-color: #4b4a4f;
+}
+
+/* Styles for breadcrumbs */
+#breadcrumbs {
+  margin: 10px 0;
+}
+
+#breadcrumbs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#breadcrumbs li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#breadcrumbs a {
+  text-decoration: none;
+  color: #b27cde;
+}
+
+#breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for artist bio images */
+.artist-bio img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
